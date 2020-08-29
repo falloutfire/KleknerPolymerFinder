@@ -1,0 +1,2 @@
+rootProject.name='Klekner Polymer Finder'
+include ':app'

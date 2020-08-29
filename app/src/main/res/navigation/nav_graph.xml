@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listPolymerFragment">
+
+    <fragment
+        android:id="@+id/listPolymerFragment"
+        android:name="com.klekner.polymerfinder.ui.ListPolymerFragment"
+        android:label="ListPolymerFragment"
+        tools:layout="@layout/fragment_list_polymer">
+        <action
+            android:id="@+id/action_listPolymerFragment_to_addPolymerFragment"
+            app:destination="@id/addPolymerFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+        <action
+            android:id="@+id/action_listPolymerFragment_to_polymerInfoFragment"
+            app:destination="@id/polymerInfoFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPolymerFragment"
+        android:name="com.klekner.polymerfinder.ui.AddPolymerFragment"
+        android:label="fragment_add_polymer"
+        tools:layout="@layout/fragment_add_polymer" />
+    <fragment
+        android:id="@+id/polymerInfoFragment"
+        android:name="com.klekner.polymerfinder.ui.PolymerInfoFragment"
+        android:label="fragment_polymer_info"
+        tools:layout="@layout/fragment_polymer_info" >
+        <argument
+            android:name="polymer_id"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+</navigation>
